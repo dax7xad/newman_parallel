@@ -1,0 +1,782 @@
+{
+	"info": {
+		"_postman_id": "ea795bac-0370-42bb-a92d-b0b8ee89b63a",
+		"name": "CSP Core WCF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7003912"
+	},
+	"item": [
+		{
+			"name": "DecryptionService",
+			"item": [
+				{
+					"name": "decryptData",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identification\": {\r\n        \"Password\": \"Blacklight_0714\",\r\n        \"SourceIp\": null,\r\n        \"UserName\": \"admin\"\r\n    },\r\n    \"encryptedData\": \"6CEB84F8F7E094BB8651A07433D1029313E0D12E161EC6987BFABD9936705BEDA35AFE5C6B2BF0CB\",\r\n    \"keyLabel\": 180,\r\n    \"inputMode\": \"H\", \r\n    \"outputMode\": \"A\" \r\n}"
+						},
+						"url": {
+							"raw": "{{WCF_URL_CORE}}/DecryptionService.svc/rest/decryptData",
+							"host": [
+								"{{WCF_URL_CORE}}"
+							],
+							"path": [
+								"DecryptionService.svc",
+								"rest",
+								"decryptData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCardNumber",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identification\": {\r\n        \"Password\": \"Blacklight_0714\",\r\n        \"SourceIp\": null,\r\n        \"UserName\": \"admin\"\r\n    },\r\n    \"encryptedData\": \"6CEB84F8F7E094BB8651A07433D1029313E0D12E161EC6987BFABD9936705BEDA35AFE5C6B2BF0CB\",\r\n    \"keyLabel\": 180,\r\n    \"inputMode\": \"H\", \r\n    \"outputMode\": \"A\" \r\n}"
+						},
+						"url": {
+							"raw": "{{WCF_URL_CORE}}/DecryptionService.svc/rest/getCardNumber",
+							"host": [
+								"{{WCF_URL_CORE}}"
+							],
+							"path": [
+								"DecryptionService.svc",
+								"rest",
+								"getCardNumber"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SettlementReportService",
+			"item": [
+				{
+					"name": "Settlement - Datos de Lote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"request\": {\r\n        \"Header\": {\r\n            \"Username\": \"wsGUATE\",\r\n            \"Password\": \"h&fg8W$1Vtyemb\"\r\n        },\r\n        \"Content\": {\r\n            \"TerminalId\": \"EMVSQU01\",\r\n            \"BachNumber\": \"3\"\r\n        }\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{url_local}}/SettlementReportService.svc/rest/GetSettlementReport",
+							"host": [
+								"{{url_local}}"
+							],
+							"path": [
+								"SettlementReportService.svc",
+								"rest",
+								"GetSettlementReport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Settlement - REPRINT for TransactionId",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"request\": {\r\n        \"Header\": {\r\n            \"Username\": \"wsGUATE\",\r\n            \"Password\": \"h&fg8W$1Vtyemb\"\r\n        },\r\n        \"Content\": {\r\n            \"TransactionId\": \"00008017037559120731\"\r\n        }\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{url_local}}/SettlementReportService.svc/rest/GetSettlementReport",
+							"host": [
+								"{{url_local}}"
+							],
+							"path": [
+								"SettlementReportService.svc",
+								"rest",
+								"GetSettlementReport"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MicroServices",
+			"item": [
+				{
+					"name": "Verify NIT",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "h&fg8W$1Vtyemb",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wsJohan",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"NIT\":\"123456789\",\"encryptedCard\":\"iWguHcQJOJ535XVUcg1/5g==\"}"
+						},
+						"url": {
+							"raw": "https://csp.credomatic.com:50581/Services/MicroServices/API-NIT-KEK/Verify",
+							"protocol": "https",
+							"host": [
+								"csp",
+								"credomatic",
+								"com"
+							],
+							"port": "50581",
+							"path": [
+								"Services",
+								"MicroServices",
+								"API-NIT-KEK",
+								"Verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SDK - CheckUpdate",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "h&fg8W$1Vtyemb",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wsJohan",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"SDKVersion\":\"v3.4.0\",\"terminaId\":\"BOCATA01\"}"
+						},
+						"url": {
+							"raw": "http://10.136.5.247:8090/MicroServices/SDKEMV/CheckSDKUpdate",
+							"protocol": "http",
+							"host": [
+								"10",
+								"136",
+								"5",
+								"247"
+							],
+							"port": "8090",
+							"path": [
+								"MicroServices",
+								"SDKEMV",
+								"CheckSDKUpdate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ClientInteropService",
+			"item": [
+				{
+					"name": "Get Token - FBF",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identification\": {\n        \"Password\": \"h&fg8W$1Vtyemb\",\n        \"UserName\": \"wsGUATE\"\n    },\n    \"thid\": \"1234567890101\"\n}"
+						},
+						"url": {
+							"raw": "{{WCF_URL_CORE}}/ClientInteropService.svc/rest/getVisanetToken",
+							"host": [
+								"{{WCF_URL_CORE}}"
+							],
+							"path": [
+								"ClientInteropService.svc",
+								"rest",
+								"getVisanetToken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login ClientInterop",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"identification\":\r\n  {\r\n    \"Password\":\"h&fg8W$1Vtyemb\",\r\n    \"UserName\":\"wsGUATE\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{WCF_URL_CORE}}/ClientInteropService.svc/rest/login",
+							"host": [
+								"{{WCF_URL_CORE}}"
+							],
+							"path": [
+								"ClientInteropService.svc",
+								"rest",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Descarga configuracion",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identification\": {\r\n        \"Password\": \"h&fg8W$1Vtyemb\",\r\n        \"UserName\": \"wsGUATE\"\r\n    },\r\n    \"terminalID\": \"CEMAJVF2\",\r\n    \"deviceSerial\": \"\"\r\n}"
+						},
+						"url": {
+							"raw": "{{WCF_URL_CORE}}/ClientInteropService.svc/rest/getMerchantConfiguration",
+							"host": [
+								"{{WCF_URL_CORE}}"
+							],
+							"path": [
+								"ClientInteropService.svc",
+								"rest",
+								"getMerchantConfiguration"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AuthorizationService",
+			"item": [
+				{
+					"name": "TRN Multiplazos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identification\": {\r\n        \"Password\": \"h&fg8W$1Vtyemb\",\r\n        \"SourceIp\": null,\r\n        \"UserName\": \"wsGUATE\"\r\n    },\r\n    \"request\": {\r\n        \"transactionType\": \"PAYMENT_PLAN\",\r\n        \"terminalId\": \"termtest\",\r\n        \"invoice\": \"000000053\",\r\n        \"entryMode\": \"CHP\",\r\n        \"totalAmount\": \"1020.00\",\r\n        \"track2\": \"b4eae7b6798fce6a2a9164a3c27469ad02a5d7dfc083836da23bb1456244a48c5f9d6ca734316d82\",\r\n        \"iccCommTags\": \"44607d6951af5fce377690228e65896c902bb792ef824ba56ef6c58e4d99348a5ffb469277b7f9cf1441ad64e7aa559e1b8395709b4ce458a8f9feb79d22c88eb5ee6ba4340c596e6d8dac95315d24f0341648ffc7a89bd705603484e044f9e1011e509fe61aadb012107302083652a2f9a7a918208389be8ae3aebda40f5b14c410d3e17275574a\",\r\n        \"serviceCode\": \"201f\",\r\n        \"keyLabel\": \"34\",\r\n        \"applicationLabel\": \"DEBITO\",\r\n        \"paymentPlan\": \"CR\",\r\n        \"paymentPlanTerm\": \"09\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{WCF_URL_CORE}}/AuthorizationService.svc/rest/executetransaction",
+							"host": [
+								"{{WCF_URL_CORE}}"
+							],
+							"path": [
+								"AuthorizationService.svc",
+								"rest",
+								"executetransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entry Mode = CLC",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identification\": {\n        \"Password\": \"h&fg8W$1Vtyemb\",\n        \"SourceIp\": null,\n        \"UserName\": \"wsGUATE\"\n    },\n    \"request\": {\n        \"transactionType\": \"SALE\",\n        \"terminalId\": \"termtest\",\n        \"invoice\": \"00201045\",\n        \"entryMode\": \"CLC\",\n        \"totalAmount\": \"14000.00\",\n        \"taxAmount\": \"0.00\",\n        \"tipAmount\": \"0.00\",\n        \"DCCEntry\": \"N\",\n        \"serialPinpad\": \"15288PP81747406\",\n        \"PPCommunicationType\": \"PCL\",\n        \"track2\": \"0D3D13D54CD1BD812F1E202B81A215888718A7338DBB89A152CD18C533BDD601AFE79820F50B7BEF\",\n        \"iccCommTags\": \"0C34307D7AF0020172F29DDB8D4AE2E7EEFABA2E89DD8FDE3378790D5595467220E4E87AD39ADBC6DE8619BB43DE47A02FA53AE2E5248FEB1CEF558CEB83CC68967C654FB293EAD7CF43D4BDC593C72F04288271BA30AA785FC48E619BAB6BDE669DBE46C93D6E5B2B9CA767E5760CEA16220C340520093BFCAE3542239310BE7C5E8B3DD16D2FEB0BD98C191D822FE0C770172D8676568EB727BDA37B35FC0B\",\n        \"serviceCode\": \"201f\",\n        \"keyLabel\": \"34\",\n        \"applicationLabel\": \"VISA CREDITO\",\n        \"DCCOrgTrx\": \"\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{WCF_URL_CORE}}/AuthorizationService.svc/rest/executetransaction",
+							"host": [
+								"{{WCF_URL_CORE}}"
+							],
+							"path": [
+								"AuthorizationService.svc",
+								"rest",
+								"executetransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entry Mode = MSE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identification\": {\n        \"Password\": \"h&fg8W$1Vtyemb\",\n        \"SourceIp\": null,\n        \"UserName\": \"wsGUATE\"\n    },\n    \"request\": {\n        \"transactionType\": \"SALE\",\n        \"terminalId\": \"termtest\",\n        \"invoice\": \"00126391\",\n        \"entryMode\": \"MSE\",\n        \"totalAmount\": \"14.00\",\n        \"taxAmount\": \"0.00\",\n        \"tipAmount\": \"0.00\",\n        \"DCCEntry\": \"N\",\n        \"serialPinpad\": \"16014SC80897315\",\n        \"PPCommunicationType\": \"LEGACY\",\n        \"track1\": \"C0A79FE5E22B36F4432DCB48407EB45ECBD1485BAB16EE939B5C199BC79155F8E86BE304214ED52BEB96DE4E05E4E33675F9AD9A9BF1D55337FD40B174942C62F6DFC019D63E9580\",\n        \"track2\": \"41287E9C7739DD617E7779EB6F70C463C7AC47B69D58540E516C7586FFEAB730EB6DB1734A512AB8\",\n        \"serviceCode\": \"201f\",\n        \"keyLabel\": \"180\",\n        \"DCCOrgTrx\": \"\",\n        \"appPinPad\": \"CREING030101\",\n        \"SDKversionEMV\": \"3.7.2\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{WCF_URL_CORE}}/AuthorizationService.svc/rest/executetransaction",
+							"host": [
+								"{{WCF_URL_CORE}}"
+							],
+							"path": [
+								"AuthorizationService.svc",
+								"rest",
+								"executetransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ECHO_TEST",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identification\": {\r\n        \"UserName\": \"wsGUATE\",\r\n        \"Password\": \"h&fg8W$1Vtyemb\"\r\n    },\r\n    \"request\": {\r\n        \"transactionType\": \"ECHO_TEST\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{WCF_URL_CORE}}/AuthorizationService.svc/rest/executetransaction",
+							"host": [
+								"{{WCF_URL_CORE}}"
+							],
+							"path": [
+								"AuthorizationService.svc",
+								"rest",
+								"executetransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VOID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identification\": {\n        \"Password\": \"&8#m1x$Txpb@\",\n        \"UserName\": \"jcmiranda_ws\"\n    },\n    \"request\": {\n        \"transactionType\": \"VOID\",\n        \"terminalId\": \"WMCURR01\",\n        \"authorizationNumber\": \"036586\",\n        \"referenceNumber\": \"26036586\",\n        \"systemTraceNumber\": \"000018\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{WCF_URL_CORE}}/AuthorizationService.svc/rest/executetransaction",
+							"host": [
+								"{{WCF_URL_CORE}}"
+							],
+							"path": [
+								"AuthorizationService.svc",
+								"rest",
+								"executetransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VOID Ambiente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"identification\":{\n\t\t\t\"Password\":\"&8#m1x$Txpb@\",\n\t\t\t\"UserName\":\"jcmiranda_ws\"\n        },\n        \"request\":{\n                 \"transactionType\":\"VOID\",\n                 \"terminalId\":\"WMCURR01\",\n                 \"authorizationNumber\":\"036586\",\n                 \"referenceNumber\":\"26036586\",\n                 \"systemTraceNumber\":\"000018\"\n        }\n}\n"
+						},
+						"url": {
+							"raw": "{{WCF_URL_CORE}}/AuthorizationService.svc/rest/executetransaction",
+							"host": [
+								"{{WCF_URL_CORE}}"
+							],
+							"path": [
+								"AuthorizationService.svc",
+								"rest",
+								"executetransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entry Mode = MCHP - VISA",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identification\": {\n        \"Password\": \"h&fg8W$1Vtyemb\",\n        \"SourceIp\": null,\n        \"UserName\": \"wsGUATE\"\n    },\n    \"request\": {\n        \"transactionType\": \"SALE\",\n        \"entryMode\": \"MCHP\",\n        \"terminalId\": \"termtest\",\n        \"invoice\": 196,\n        \"totalAmount\": \"10.00\",\n        \"iccEncryptedTags\": \"E2975B03F2226023416133E2174B8D381B4E6D19032192BF3E0C2298BAF8719742B6905F33B9FE312FF9063C4B5749093328FB5E20E0A0BFBE58C2DD9B95BAFEC6EE5F3CA09C7439F4E8BEDE5E292B2BA8AFE9B887F25D1E614F0CAFBFD246455427639CC5CD63EC3BAFBE8658BD47D48DFEDCAEF956964D057B54F3A95D684C620A86E1B086F18D9067BB26CBB845DCDA46E031EA76716982F63C4AD24257BBA03B5296E1B3E7875B7792E523053A363CEDDCF920972A32519E1D1659EA968868B30343FB8EC3350D6AB9F74BA684AD7EA050A6154BDAD66548D0CC255F662087E11FA02A900AB6E55132CD865A17C4A601482358CAA7AFB9E892661F1200754C85D9820C4E3AEAF32089261581170D84676F23990B645094B1CD0965ABF3513CDAF39E91077F89548CE5C976B060D1CC103B68EF0B9F611BDF717C4D1A1F8111459B2C4EFFD1DAC52FC2878F07569F2179A9BB5169FD7099A2765D03A3E19EA28ACB66EE3BAE322377795CD2F51F6C2A9C04802B53F801712D9ABF22B6DB01FFE089484497F5A0AE43CB4104661164B7450C9903ABB8BE0598A8C686EDB8A9\",\n        \"applicationLabel\": \"VISA ELECTRON\",\n        \"KSN\": \"FFFF01117C70CA0002D7\"\n    }"
+						},
+						"url": {
+							"raw": "{{WCF_URL_CORE}}/AuthorizationService.svc/rest/executetransaction",
+							"host": [
+								"{{WCF_URL_CORE}}"
+							],
+							"path": [
+								"AuthorizationService.svc",
+								"rest",
+								"executetransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entry Mode = MCHP - MC",
+					"protocolProfileBehavior": {
+						"strictSSL": false
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "h&fg8W$1Vtyemb",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "wsPOS",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identification\": {\n        \"Password\": \"h&fg8W$1Vtyemb\",\n        \"SourceIp\": null,\n        \"UserName\": \"wsGUATE\"\n    },\n    \"request\": {\n        \"transactionType\": \"SALE\",\n        \"entryMode\": \"MCHP\",\n        \"terminalId\": \"termtest\",\n        \"invoice\": 197,\n        \"totalAmount\": \"20.00\",\n        \"iccEncryptedTags\": \"73C07C77227DEDE11508AE51BA285D97A31AD44A1884EFFC0978725BBCE4789C1FB051F8AE8E13846278D030E2A1A4B324DBB12D811B99ADCEF3E38CB0B2B1D28CE3DABBC5CD86E92F2FBA8748D893F922367E3F6AED42E71F2D29DE198DA3362B41C076A09C6720C76C6CA3F14CAD80B6884D12C9EA975DFE82A2F70888AC1732F56AEBDFF6663CA3E2A68C08CA3FE9CC60EE723906E20202374C2CA7DAE99C33C1E88707CEBA2413855539EAB3FB18CA1BD8FBD9BD91847E618FD92CAB7AEF399D7450057B3090DC74830D6161AF7D64F7D5439FAB356FAF5758B9C54914C66C792BFE405EDFF24BC11D81A00F74E85EA6252E1B4B6F4DDE6F45534BD7B0AE86312A3B32B0C3FF16D280D279C7BAA5F96F3A29C6217C3B85D17062EB8742B9F44BB5A3155FFD98FC26DF5EDDCD3742A6CABD680BE94D5E00476FB21774E84CCA09E952325013574D22BF83DFB225027BCF1B5BAE5BABFF724CAB43724D4E287D51A0FCE79A1F5949C5FC2427AF126F38FFCCE78DB6A5620753A27AFF420AEEADFE93EB03BFCF3D6CEA1E881F731F62065CF7664E0EF498CE3F0735E977DCD2\",\n        \"applicationLabel\": \"MasterCard\",\n        \"KSN\": \"FFFF01117C70CA000005\",\n        \"pinOnLineKSN\": \"475047504E0000000005\",\n        \"pinBlock\": \"06FA4E2CB98B78C4\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{WCF_URL_CORE}}/AuthorizationService.svc/rest/executetransaction",
+							"host": [
+								"{{WCF_URL_CORE}}"
+							],
+							"path": [
+								"AuthorizationService.svc",
+								"rest",
+								"executetransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SALE PinONLine",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identification\": {\r\n        \"Password\": \"h&fg8W$1Vtyemb\",\r\n        \"SourceIp\": null,\r\n        \"UserName\": \"wsGUATE\"\r\n    },\r\n    \"request\": {\r\n        \"transactionType\": \"SALE\",\r\n        \"terminalId\": \"termtest\",\r\n        \"invoice\": \"00372003\",\r\n        \"entryMode\": \"MSE\",\r\n        \"totalAmount\": \"10.00\",\r\n        \"taxAmount\": \"0.00\",\r\n        \"tipAmount\": \"0.00\",\r\n        \"DCCEntry\": \"N\",\r\n        \"serialPinpad\": \"15288PP81747406\",\r\n        \"PPCommunicationType\": \"LEGACY\",\r\n        \"track1\": \"C0A79FE5E22B36F4432DCB48407EB45ECBD1485BAB16EE939B5C199BC79155F8E86BE304214ED52BEB96DE4E05E4E33675F9AD9A9BF1D55337FD40B174942C62F6DFC019D63E9580\",\r\n        \"track2\": \"41287E9C7739DD617E7779EB6F70C463C7AC47B69D58540E516C7586FFEAB730EB6DB1734A512AB8\",\r\n        \"serviceCode\": \"201f\",\r\n        \"keyLabel\": \"180\",\r\n        \"pinBlock\": \"AB0CEF1E399BE5B5\",\r\n        \"pinOnLineKSN\": \"43524543520000000001\",\r\n        \"DCCOrgTrx\": \"\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{WCF_URL_CORE}}/authorizationservice.svc/rest/executeTransaction",
+							"host": [
+								"{{WCF_URL_CORE}}"
+							],
+							"path": [
+								"authorizationservice.svc",
+								"rest",
+								"executeTransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CENTRALIZADO - Entry Mode = CLC",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identification\": {\n        \"Password\": \"h&fg8W$1Vtyemb\",\n        \"SourceIp\": null,\n        \"UserName\": \"wsGUATE\"\n    },\n    \"request\": {\n        \"transactionType\": \"SALE\",\n        \"terminalId\": \"termtest\",\n        \"invoice\": \"00201045\",\n        \"entryMode\": \"CLC\",\n        \"totalAmount\": \"14000.00\",\n        \"taxAmount\": \"0.00\",\n        \"tipAmount\": \"0.00\",\n        \"DCCEntry\": \"N\",\n        \"serialPinpad\": \"15288PP81747406\",\n        \"PPCommunicationType\": \"PCL\",\n        \"track2\": \"0D3D13D54CD1BD812F1E202B81A215888718A7338DBB89A152CD18C533BDD601AFE79820F50B7BEF\",\n        \"iccCommTags\": \"0C34307D7AF0020172F29DDB8D4AE2E7EEFABA2E89DD8FDE3378790D5595467220E4E87AD39ADBC6DE8619BB43DE47A02FA53AE2E5248FEB1CEF558CEB83CC68967C654FB293EAD7CF43D4BDC593C72F04288271BA30AA785FC48E619BAB6BDE669DBE46C93D6E5B2B9CA767E5760CEA16220C340520093BFCAE3542239310BE7C5E8B3DD16D2FEB0BD98C191D822FE0C770172D8676568EB727BDA37B35FC0B\",\n        \"serviceCode\": \"201f\",\n        \"keyLabel\": \"34\",\n        \"applicationLabel\": \"VISA CREDITO\",\n        \"DCCOrgTrx\": \"\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{WCF_URL_CORE}}/AuthorizationService.svc/rest/executeTransaction",
+							"host": [
+								"{{WCF_URL_CORE}}"
+							],
+							"path": [
+								"AuthorizationService.svc",
+								"rest",
+								"executeTransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Conversion a Venta Centralziado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identification\": {\n        \"Password\": \"h&fg8W$1Vtyemb\",\n        \"SourceIp\": null,\n        \"UserName\": \"wsGUATE\"\n    },\n    \"request\": {\n        \"transactionType\": \"SALE_COMPLETION\",\n        \"terminalId\": \"termtest\",\n        \"referenceNumber\": \"09033983     \",\n        \"totalAmount\": \"14000.00\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{WCF_URL_CORE}}/AuthorizationService.svc/rest/executeTransaction",
+							"host": [
+								"{{WCF_URL_CORE}}"
+							],
+							"path": [
+								"AuthorizationService.svc",
+								"rest",
+								"executeTransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entry Mode = CHP Centralizado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identification\": {\r\n        \"Password\": \"h&fg8W$1Vtyemb\",\r\n        \"SourceIp\": null,\r\n        \"UserName\": \"wsGUATE\"\r\n    },\r\n    \"request\": {\r\n        \"transactionType\": \"SALE\",\r\n        \"terminalId\": \"termtest\",\r\n        \"invoice\": \"FA002\",\r\n        \"entryMode\": \"CHP\",\r\n        \"totalAmount\": \"200.00\",\r\n        \"taxAmount\": \"7.00\",\r\n        \"tipAmount\": \"6.00\",\r\n        \"DCCEntry\": \"N\",\r\n        \"serialPinpad\": \"00001\",\r\n        \"track2\": \"0DC20A9C2C7BBA6C447F145B8B64E8D4A39EE19DD41085FE436CFD998C0DCBA2D63AE3B889FAF5A1\",\r\n        \"iccCommTags\": \"AFF0270A9F4E1E8CEB353E0B5FC62A08C17F00B4EB160C9EA9EF406CF0B3E3708DBA1EB5ADDBA4603B1DF945D734C125B47EA79135E557C6A298A49EB512BF303ABFA56E7EA51E29188C60070D94972BB133FCA91F8DBF8E8E28BB92EAF9A8265F94B8D15C9BDBBA7BBC67F72F523F7C0A8EA7971CD5101CC3A0B8A8957B0888\",\r\n        \"serviceCode\": \"201f\",\r\n        \"keyLabel\": \"34\",\r\n        \"applicationLabel\": \"AMEX\",\r\n        \"DCCOrgTrx\": \"\",\r\n        \"PPCommunicationType\": \"ANDROID\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{WCF_URL_CORE}}/AuthorizationService.svc/rest/executetransaction",
+							"host": [
+								"{{WCF_URL_CORE}}"
+							],
+							"path": [
+								"AuthorizationService.svc",
+								"rest",
+								"executetransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entry Mode = MCHP - VISA Centralizado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identification\": {\n        \"Password\": \"h&fg8W$1Vtyemb\",\n        \"SourceIp\": null,\n        \"UserName\": \"wsGUATE\"\n    },\n    \"request\": {\n        \"transactionType\": \"SALE\",\n        \"entryMode\": \"MCHP\",\n        \"terminalId\": \"termtest\",\n        \"invoice\": 196,\n        \"totalAmount\": \"10.00\",\n        \"iccEncryptedTags\": \"E2975B03F2226023416133E2174B8D381B4E6D19032192BF3E0C2298BAF8719742B6905F33B9FE312FF9063C4B5749093328FB5E20E0A0BFBE58C2DD9B95BAFEC6EE5F3CA09C7439F4E8BEDE5E292B2BA8AFE9B887F25D1E614F0CAFBFD246455427639CC5CD63EC3BAFBE8658BD47D48DFEDCAEF956964D057B54F3A95D684C620A86E1B086F18D9067BB26CBB845DCDA46E031EA76716982F63C4AD24257BBA03B5296E1B3E7875B7792E523053A363CEDDCF920972A32519E1D1659EA968868B30343FB8EC3350D6AB9F74BA684AD7EA050A6154BDAD66548D0CC255F662087E11FA02A900AB6E55132CD865A17C4A601482358CAA7AFB9E892661F1200754C85D9820C4E3AEAF32089261581170D84676F23990B645094B1CD0965ABF3513CDAF39E91077F89548CE5C976B060D1CC103B68EF0B9F611BDF717C4D1A1F8111459B2C4EFFD1DAC52FC2878F07569F2179A9BB5169FD7099A2765D03A3E19EA28ACB66EE3BAE322377795CD2F51F6C2A9C04802B53F801712D9ABF22B6DB01FFE089484497F5A0AE43CB4104661164B7450C9903ABB8BE0598A8C686EDB8A9\",\n        \"applicationLabel\": \"VISA ELECTRON\",\n        \"KSN\": \"FFFF01117C70CA0002D7\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{WCF_URL_CORE}}/AuthorizationService.svc/rest/executetransaction",
+							"host": [
+								"{{WCF_URL_CORE}}"
+							],
+							"path": [
+								"AuthorizationService.svc",
+								"rest",
+								"executetransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entry Mode = MCLC QPOS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identification\": {\n        \"Password\": \"h&fg8W$1Vtyemb\",\n        \"SourceIp\": null,\n        \"UserName\": \"wsGUATE\"\n    },\n    \"request\": {\n        \"transactionType\": \"SALE\",\n        \"entryMode\": \"MCLC\",\n        \"terminalId\": \"GPRTL001\",\n        \"invoice\": 259,\n        \"totalAmount\": \"700.00\",\n        \"iccEncryptedTags\": \"528D8534B11795B7A3DE1540AE0DB460CB14DD417F3C949D10F69CC3ABE5051809EE965AF0C0ADA90FFE3AAF33AD2F4FBA45840FF2CAB32EE9B8B001C05D029ABCB7E30F4FFEC6037B738C14D1A1A57C8C9290360631DA68B78EFB53A5A8C24B120993F28C1570BCDB32DA50989D1D3E375B09688B87A5730B00709C52F3E7468D2122C8BA1D43DFCBA3B284502381F420BA7E3C9F338DC8A0D6351DB2069BF75007FD7565C3E2DD23CD1B4FB7F8E86630EF612CF3AC0922D5014F2E5F38193078D5F3A4BD5185F044F8F06AF354B3EF6300B08E8769295E13F483200253D90FCFFC33FB04C0A8249E9E0CC17D6C4631986C3B737580156A1B7642B2108F45BDC2F03E1551F0ABE891C0C047B62DFD72\",\n        \"applicationLabel\": \"MASTERCARD\",\n        \"KSN\": \"FFFF01117C70CA00005C\",\n        \"tipAmount\": 0,\n        \"taxAmount\": 0\n    }\n}"
+						},
+						"url": {
+							"raw": "{{WCF_URL_CORE}}/AuthorizationService.svc/rest/executetransaction",
+							"host": [
+								"{{WCF_URL_CORE}}"
+							],
+							"path": [
+								"AuthorizationService.svc",
+								"rest",
+								"executetransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DUKPT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identification\": {\r\n        \"Password\": \"h&fg8W$1Vtyemb\",\r\n        \"SourceIp\": null,\r\n        \"UserName\": \"wsGUATE\"\r\n    },\r\n    \"request\": {\r\n        \"transactionType\": \"SALE\",\r\n        \"terminalId\": \"GPRTL001\",\r\n        \"invoice\": \"00126391\",\r\n        \"entryMode\": \"MSE\",\r\n        \"totalAmount\": \"14.00\",\r\n        \"tipAmount\": \"0.00\",\r\n        \"track2\": \"CE2E3FE9CF1D48DB579BDC47C622751B\",\r\n        \"KSN\": \"FFFF01117C70CA0002D7\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{WCF_URL_CORE}}/AuthorizationService.svc/rest/executetransaction",
+							"host": [
+								"{{WCF_URL_CORE}}"
+							],
+							"path": [
+								"AuthorizationService.svc",
+								"rest",
+								"executetransaction"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

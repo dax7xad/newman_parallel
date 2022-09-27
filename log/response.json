@@ -1,0 +1,760 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "ea795bac-0370-42bb-a92d-b0b8ee89b63a",
+      "exporter_id": "7003912"
+    },
+    "item": [
+      {
+        "id": "986fd739-25f8-463a-ac19-f59ce66e5ebc",
+        "name": "SettlementReportService",
+        "item": [
+          {
+            "id": "1e962bff-c5a6-4b02-8e68-f87be9fc5050",
+            "name": "Settlement - REPRINT for TransactionId",
+            "request": {
+              "url": {
+                "path": [
+                  "SettlementReportService.svc",
+                  "rest",
+                  "GetSettlementReport"
+                ],
+                "host": [
+                  "{{url_local}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "method": "POST",
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"request\": {\r\n        \"Header\": {\r\n            \"Username\": \"wsGUATE\",\r\n            \"Password\": \"h&fg8W$1Vtyemb\"\r\n        },\r\n        \"Content\": {\r\n            \"TransactionId\": \"00008017037559120731\"\r\n        }\r\n    }\r\n}"
+              }
+            },
+            "response": [],
+            "event": []
+          }
+        ],
+        "event": []
+      }
+    ],
+    "event": [],
+    "variable": [],
+    "info": {
+      "_postman_id": "ea795bac-0370-42bb-a92d-b0b8ee89b63a",
+      "name": "CSP Core WCF",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    }
+  },
+  "environment": {
+    "_": {
+      "postman_variable_scope": "environment",
+      "postman_exported_at": "2022-09-27T16:21:47.453Z",
+      "postman_exported_using": "Postman/9.31.12"
+    },
+    "id": "4c548bc7-48fb-470a-bee5-681e95f3e5c2",
+    "name": "Dev-Server-Local",
+    "values": [
+      {
+        "type": "any",
+        "value": "http://10.136.5.247:8092/Services/CSPRapibac/ClientTerminalService.svc/rest",
+        "key": "WCF_URL"
+      },
+      {
+        "type": "any",
+        "value": "http://10.136.5.247:8092/Services/CSPBridgeAPI/api",
+        "key": "BRIDGE_URL"
+      },
+      {
+        "type": "any",
+        "value": "http://10.136.5.247:8085/Services/CSPRapibacMessageAPI/api",
+        "key": "MSG_API_URL"
+      },
+      {
+        "type": "any",
+        "value": "http://10.136.5.247:8085/Services/Auth/Auth",
+        "key": "OAUTH_SRV_URL"
+      },
+      {
+        "type": "any",
+        "value": "G1vnTHwfiDOLOxqJA5",
+        "key": "APP_ID_RAPIBAC"
+      },
+      {
+        "type": "any",
+        "value": "PAApwAWXTSPpYhGM6X",
+        "key": "APP_ID_CONECTIVITY"
+      },
+      {
+        "type": "any",
+        "value": "qiubsyQHc3IzEc0u4V",
+        "key": "APP_ID_OAUTH_ADMIN"
+      },
+      {
+        "type": "any",
+        "value": "http://10.136.5.247:8094/Services/CSP",
+        "key": "url_local"
+      },
+      {
+        "type": "any",
+        "value": "http://10.136.5.247:8094/Services/CSP",
+        "key": "WCF_URL_CORE"
+      }
+    ]
+  },
+  "globals": {
+    "id": "d1909d81-9e94-427f-ad38-99d7b8ee318f",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      },
+      "testScripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 3142,
+      "responseMin": 3142,
+      "responseMax": 3142,
+      "responseSd": 0,
+      "dnsAverage": 0,
+      "dnsMin": 0,
+      "dnsMax": 0,
+      "dnsSd": 0,
+      "firstByteAverage": 0,
+      "firstByteMin": 0,
+      "firstByteMax": 0,
+      "firstByteSd": 0,
+      "started": 1664310370978,
+      "completed": 1664310374140
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 1,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "a8c32f7f-2360-4f8d-b4d4-f062dfddcd50",
+          "httpRequestId": "ab28cf79-2217-42cd-9d30-0d6635a24461"
+        },
+        "item": {
+          "id": "1e962bff-c5a6-4b02-8e68-f87be9fc5050",
+          "name": "Settlement - REPRINT for TransactionId",
+          "request": {
+            "url": {
+              "path": [
+                "SettlementReportService.svc",
+                "rest",
+                "GetSettlementReport"
+              ],
+              "host": [
+                "{{url_local}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"request\": {\r\n        \"Header\": {\r\n            \"Username\": \"wsGUATE\",\r\n            \"Password\": \"h&fg8W$1Vtyemb\"\r\n        },\r\n        \"Content\": {\r\n            \"TransactionId\": \"00008017037559120731\"\r\n        }\r\n    }\r\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8094",
+            "path": [
+              "Services",
+              "CSP",
+              "SettlementReportService.svc",
+              "rest",
+              "GetSettlementReport"
+            ],
+            "host": [
+              "10",
+              "136",
+              "5",
+              "247"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.29.0",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "f346bc11-5896-4a76-89ec-25668829a0d0",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "10.136.5.247:8094",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "226",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"request\": {\r\n        \"Header\": {\r\n            \"Username\": \"wsGUATE\",\r\n            \"Password\": \"h&fg8W$1Vtyemb\"\r\n        },\r\n        \"Content\": {\r\n            \"TransactionId\": \"00008017037559120731\"\r\n        }\r\n    }\r\n}"
+          }
+        },
+        "response": {
+          "id": "c2ac6c8a-88a5-4b56-b020-ac57c3a74099",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Server",
+              "value": "Microsoft-IIS/8.5"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "ASP.NET"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 27 Sep 2022 20:26:14 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "420"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              71,
+              101,
+              116,
+              83,
+              101,
+              116,
+              116,
+              108,
+              101,
+              109,
+              101,
+              110,
+              116,
+              82,
+              101,
+              112,
+              111,
+              114,
+              116,
+              82,
+              101,
+              115,
+              117,
+              108,
+              116,
+              34,
+              58,
+              123,
+              34,
+              72,
+              101,
+              97,
+              100,
+              101,
+              114,
+              34,
+              58,
+              123,
+              34,
+              83,
+              116,
+              97,
+              116,
+              117,
+              115,
+              34,
+              58,
+              48,
+              125,
+              44,
+              34,
+              67,
+              111,
+              110,
+              116,
+              101,
+              110,
+              116,
+              34,
+              58,
+              123,
+              34,
+              84,
+              114,
+              97,
+              110,
+              115,
+              97,
+              99,
+              116,
+              105,
+              111,
+              110,
+              115,
+              34,
+              58,
+              91,
+              123,
+              34,
+              84,
+              114,
+              97,
+              110,
+              115,
+              97,
+              99,
+              116,
+              105,
+              111,
+              110,
+              73,
+              100,
+              34,
+              58,
+              34,
+              48,
+              48,
+              48,
+              48,
+              56,
+              48,
+              49,
+              55,
+              48,
+              51,
+              55,
+              53,
+              53,
+              57,
+              49,
+              50,
+              48,
+              55,
+              51,
+              49,
+              34,
+              44,
+              34,
+              84,
+              114,
+              97,
+              110,
+              115,
+              97,
+              99,
+              116,
+              105,
+              111,
+              110,
+              84,
+              121,
+              112,
+              101,
+              34,
+              58,
+              34,
+              83,
+              97,
+              108,
+              101,
+              34,
+              44,
+              34,
+              65,
+              117,
+              116,
+              104,
+              111,
+              114,
+              105,
+              122,
+              97,
+              116,
+              105,
+              111,
+              110,
+              78,
+              117,
+              109,
+              98,
+              101,
+              114,
+              34,
+              58,
+              34,
+              48,
+              51,
+              55,
+              53,
+              53,
+              57,
+              34,
+              44,
+              34,
+              82,
+              101,
+              102,
+              101,
+              114,
+              101,
+              110,
+              99,
+              101,
+              78,
+              117,
+              109,
+              98,
+              101,
+              114,
+              34,
+              58,
+              34,
+              49,
+              55,
+              48,
+              51,
+              55,
+              53,
+              53,
+              57,
+              32,
+              32,
+              32,
+              32,
+              34,
+              44,
+              34,
+              67,
+              97,
+              114,
+              100,
+              34,
+              58,
+              34,
+              52,
+              57,
+              50,
+              49,
+              88,
+              88,
+              88,
+              88,
+              88,
+              88,
+              88,
+              88,
+              54,
+              52,
+              49,
+              49,
+              34,
+              44,
+              34,
+              84,
+              111,
+              116,
+              97,
+              108,
+              65,
+              109,
+              111,
+              117,
+              110,
+              116,
+              34,
+              58,
+              34,
+              49,
+              50,
+              48,
+              48,
+              46,
+              48,
+              48,
+              34,
+              44,
+              34,
+              73,
+              110,
+              118,
+              111,
+              105,
+              99,
+              101,
+              34,
+              58,
+              34,
+              66,
+              67,
+              48,
+              48,
+              51,
+              50,
+              51,
+              34,
+              44,
+              34,
+              84,
+              101,
+              114,
+              109,
+              105,
+              110,
+              97,
+              108,
+              73,
+              100,
+              34,
+              58,
+              34,
+              66,
+              79,
+              67,
+              65,
+              84,
+              65,
+              48,
+              49,
+              34,
+              44,
+              34,
+              72,
+              111,
+              115,
+              116,
+              68,
+              97,
+              116,
+              101,
+              34,
+              58,
+              34,
+              50,
+              48,
+              49,
+              56,
+              92,
+              47,
+              48,
+              49,
+              92,
+              47,
+              49,
+              55,
+              34,
+              44,
+              34,
+              72,
+              111,
+              115,
+              116,
+              84,
+              105,
+              109,
+              101,
+              34,
+              58,
+              34,
+              49,
+              50,
+              58,
+              48,
+              55,
+              58,
+              51,
+              48,
+              32,
+              80,
+              77,
+              34,
+              44,
+              34,
+              79,
+              114,
+              100,
+              101,
+              114,
+              73,
+              100,
+              34,
+              58,
+              34,
+              34,
+              44,
+              34,
+              79,
+              114,
+              100,
+              101,
+              114,
+              78,
+              117,
+              109,
+              98,
+              101,
+              114,
+              34,
+              58,
+              34,
+              34,
+              44,
+              34,
+              67,
+              111,
+              109,
+              109,
+              84,
+              97,
+              103,
+              115,
+              34,
+              58,
+              34,
+              34,
+              44,
+              34,
+              67,
+              97,
+              114,
+              100,
+              66,
+              114,
+              97,
+              110,
+              100,
+              34,
+              58,
+              34,
+              86,
+              73,
+              83,
+              65,
+              34,
+              125,
+              93,
+              125,
+              125,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 3142,
+          "responseSize": 420
+        },
+        "id": "1e962bff-c5a6-4b02-8e68-f87be9fc5050"
+      }
+    ],
+    "transfers": {
+      "responseTotal": 420
+    },
+    "failures": [],
+    "error": null
+  }
+}

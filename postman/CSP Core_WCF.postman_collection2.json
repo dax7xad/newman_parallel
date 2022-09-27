@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "ea795bac-0370-42bb-a92d-b0b8ee89b63a",
+		"name": "CSP Core WCF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7003912"
+	},
+	"item": [
+		{
+			"name": "SettlementReportService",
+			"item": [
+
+				{
+					"name": "Settlement - REPRINT for TransactionId",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"request\": {\r\n        \"Header\": {\r\n            \"Username\": \"wsGUATE\",\r\n            \"Password\": \"h&fg8W$1Vtyemb\"\r\n        },\r\n        \"Content\": {\r\n            \"TransactionId\": \"00008017037559120731\"\r\n        }\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{url_local}}/SettlementReportService.svc/rest/GetSettlementReport",
+							"host": [
+								"{{url_local}}"
+							],
+							"path": [
+								"SettlementReportService.svc",
+								"rest",
+								"GetSettlementReport"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

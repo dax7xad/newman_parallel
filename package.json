@@ -12,6 +12,8 @@
   "dependencies": {
     "async": "^3.2.0",
     "newman": "^5.2.0",
+    "newman-reporter-html": "^1.0.5",
+    "newman-reporter-htmlextra": "^1.22.11",
     "path": "^0.12.7"
   }
 }

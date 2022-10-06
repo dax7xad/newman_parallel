@@ -13,8 +13,11 @@ const parametersForTestRun = {
     __dirname,
     "postman/Dev-Server-Local.postman_environment.json"
   ), //your env
-  reporters: ["json"],
-  reporter: { json: { export: "log/response.json" } },
+  reporters: ["htmlextra"],
+  reporter: {
+    htmlextra: { export: "log/response.html" },
+   
+  },
 };
 
 parallelCollectionRun = newmanWorkflow();

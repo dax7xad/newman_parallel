@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "cedc8077-e193-4cba-bded-fb4d5fa18b20",
+		"name": "CryptoManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7003912"
+	},
+	"item": [
+		{
+			"name": "encrypt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"COTO0922/Q==\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.136.5.247:8085/Services/CrytoManagement/api/encrypt",
+					"protocol": "http",
+					"host": [
+						"10",
+						"136",
+						"5",
+						"247"
+					],
+					"port": "8085",
+					"path": [
+						"Services",
+						"CrytoManagement",
+						"api",
+						"encrypt"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

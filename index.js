@@ -7,7 +7,7 @@ const PARALLEL_RUN_COUNT = 1;
 const parametersForTestRun = {
   collection: path.join(
     __dirname,
-    "postman/CSP Core_WCF.postman_collection.json"
+    "postman/CryptoManagement.postman_collection.json"
   ), // your collection
   environment: path.join(
     __dirname,
@@ -48,12 +48,13 @@ function newmanWorkflow() {
         if (error) {
           console.error(error);
         } else {
+          const date = new Date().toISOString().split("T")[0].replace(/-/g, "");
           const name =
-            "log/responses/" +
+            `log/responses/${date}/` +
             data.item.name.replace("-", " ").replace(/\s+/g, "_") +
             ".json";
 
-          const date = new Date().toISOString().split("T")[0].replace(/-/g, "");
+          
           fs.mkdir(`log/responses/${date}`, { recursive: true }, (err) => {
             if (err) throw err;
 

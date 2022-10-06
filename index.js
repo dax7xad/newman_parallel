@@ -3,7 +3,7 @@ const async = require("async");
 const newman = require("newman");
 fs = require("fs");
 const PARALLEL_RUN_COUNT = 1;
-
+const date = new Date().toISOString().split("T")[0].replace(/-/g, "");
 const parametersForTestRun = {
   collection: path.join(
     __dirname,
@@ -15,8 +15,7 @@ const parametersForTestRun = {
   ), //your env
   reporters: ["htmlextra"],
   reporter: {
-    htmlextra: { export: "log/response.html" },
-   
+    htmlextra: { export: `log/responses/${date}/response.html` },
   },
 };
 

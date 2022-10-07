@@ -7,7 +7,7 @@ const date = new Date().toISOString().split("T")[0].replace(/-/g, "");
 const parametersForTestRun = {
   collection: path.join(
     __dirname,
-    "postman/CryptoManagement.postman_collection.json"
+    "postman/CSP_Core_WCF.postman_collection.json"
   ), // your collection
   environment: path.join(
     __dirname,
@@ -17,8 +17,8 @@ const parametersForTestRun = {
   reporter: {
     htmlextra: {
       export: `log/responses/${date}/response.html`,
-       template: './postman/template.hbs',
-       logs: true,
+      template: "./postman/template.hbs",
+      logs: true,
       // showOnlyFails: true,
       // noSyntaxHighlighting: true,
       // testPaging: true,
@@ -58,9 +58,7 @@ async.parallel(commands, (err, results) => {
   err && console.error(err);
 
   results.forEach(function (result) {
-    var failures = result.run.failures;
-    // var executions = result.run.executions;
-    // console.log("executions =>", executions[0].response.stream.toString());
+    const failures = result.run.failures;
     console.info(
       failures.length
         ? JSON.stringify(failures.failures, null, 2)
@@ -82,11 +80,8 @@ function newmanWorkflow() {
             `log/responses/${date}/` +
             data.item.name.replace("-", " ").replace(/\s+/g, "_") +
             ".json";
-
-          
           fs.mkdir(`log/responses/${date}`, { recursive: true }, (err) => {
             if (err) throw err;
-
             fs.writeFile(
               name,
               data.response.stream.toString(),

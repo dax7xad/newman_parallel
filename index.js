@@ -1,32 +1,37 @@
 const path = require("path");
+const async = require("async");
 const newman = require("newman");
-const fs = require("fs");
+const ProgressBar = require('progress');
+const iterationCount = 20000;
+const bar = new ProgressBar(':bar :current/:total', { total: iterationCount });
+fs = require("fs");
 
+const date = new Date().toISOString().split("T")[0].replace(/-/g, "");
 let results = [];
-let requestCount = 0;
-
 newman.run({
   collection: path.join(
     __dirname,
     "postman/PruebasEcommerce.postman_collection.json"
-  ),
+  ), // your collection
   environment: path.join(
     __dirname,
     "postman/STAGING .postman_environment.json"
-  ),
+  ), //your env
   reporters: ["json"],
-  iterationCount: 10,
+  iterationCount: iterationCount,
   reporter: { json: { export: "log/response.json" } },
-})
-  .on("request", function(err, args) {
-    if (!err) {
-      console.log(`Request ${args.item.id} completed.`);
-      var rawBody = args.response.stream,
-        body = rawBody.toString();
-      results.push(JSON.parse(body));
-    }
-  })
-  .on("done", function(err, summary) {
-    console.log("\nTermino!");
-    fs.writeFileSync("./log/ecommers-report.json", JSON.stringify(results, null, 4));
-  });
+}).on('request', function(err, args) {
+  bar.tick();
+  if(!err) {
+    var rawBody = args.response.stream,
+                 body = rawBody.toString();
+
+                results.push(JSON.parse(body));
+  }
+}).on('done', function(err, summary) {
+  console.log('Termino!');
+  fs.writeFileSync('./log/ecommers-report.json', JSON.stringify(results, null, 4));
+});
+
+
+

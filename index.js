@@ -7,11 +7,11 @@ const date = new Date().toISOString().split("T")[0].replace(/-/g, "");
 const parametersForTestRun = {
   collection: path.join(
     __dirname,
-    "postman/CSP_Core_WCF.postman_collection.json"
+    "postman/PruebasEcommerce.postman_collection.json"
   ), // your collection
   environment: path.join(
     __dirname,
-    "postman/Dev-Server-Local.postman_environment.json"
+    "postman/STAGING .postman_environment.json"
   ), //your env
   reporters: ["htmlextra"],
   reporter: {
@@ -75,23 +75,24 @@ function newmanWorkflow() {
         if (error) {
           console.error(error);
         } else {
-          const date = new Date().toISOString().split("T")[0].replace(/-/g, "");
-          const name =
-            `log/responses/${date}/` +
-            data.item.name.replace("-", " ").replace(/\s+/g, "_") +
-            ".json";
-          fs.mkdir(`log/responses/${date}`, { recursive: true }, (err) => {
-            if (err) throw err;
-            fs.writeFile(
-              name,
-              data.response.stream.toString(),
-              function (error) {
-                if (error) {
-                  console.error(error);
-                }
-              }
-            );
-          });
+          // // // const date = new Date().toISOString().split("T")[0].replace(/-/g, "");
+          // const name =
+          //   `log/responses/${date}/` +
+          //   data.item.name.replace("-", " ").replace(/\s+/g, "_") +
+          //   ".json";
+          // fs.mkdir(`log/responses/${date}`, { recursive: true }, (err) => {
+          //   if (err) throw err;
+          //   fs.writeFile(
+          //     name,
+          //     data.response.stream.toString(),
+          //     function (error) {
+          //       if (error) {
+          //         console.error(error);
+          //       }
+          //     }
+          //   );
+          // });
+          console.log('exitoso!');
         }
       });
   };

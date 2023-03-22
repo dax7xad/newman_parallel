@@ -2,7 +2,7 @@ const path = require("path");
 const async = require("async");
 const newman = require("newman");
 const ProgressBar = require('progress');
-const iterationCount = 20000;
+const iterationCount = 100;
 const bar = new ProgressBar(':bar :current/:total', { total: iterationCount });
 fs = require("fs");
 
@@ -17,7 +17,7 @@ newman.run({
     __dirname,
     "postman/STAGING .postman_environment.json"
   ), //your env
-  reporters: ["json"],
+  reporters: ["htmlextra"],
   iterationCount: iterationCount,
   reporter: { json: { export: "log/response.json" } },
 }).on('request', function(err, args) {
